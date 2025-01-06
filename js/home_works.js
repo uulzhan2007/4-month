@@ -18,3 +18,10 @@ const moveBlock = () => {
 }
 
 moveBlock();
+
+console.log('Home Work 2')
+const logger = (a) => {
+    console.log(a)
+}
+logger('Hellloooooooooo!')
+
