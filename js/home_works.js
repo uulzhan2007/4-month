@@ -1,3 +1,4 @@
+// gmail
 const gmailInput = document.getElementById("gmail_input").value.trim();
 const resultSpan = document.getElementById("gmail_result");
 
@@ -14,7 +15,7 @@ document.getElementById("gmail_button").addEventListener("click", function () {
     }
 });
 
-
+//block
 const childBlock = document.querySelector('.child_block');
 const parentBlock = document.querySelector('.parent_block');
 
@@ -46,4 +47,34 @@ const moveBlock = () => {
 moveBlock();
 
 
+// stopwatch
+const secondsNum = document. querySelector("#seconds")
+const startBtn = document.querySelector("#start");
+const stopBtn = document.querySelector("#stop");
+const resetBtn = document.querySelector("#reset");
 
+let seconds = 0;
+let interval = null;
+
+startBtn.addEventListener("click", function (event) {
+    if (interval === null) {
+        interval = setInterval(function () {
+            seconds ++;
+            secondsNum.textContent = seconds;
+        },1000);
+    }
+})
+
+stopBtn.addEventListener("click", function (event) {
+    clearInterval(interval);
+    interval = null;
+})
+
+resetBtn.addEventListener("click", function (event) {
+    clearInterval(interval);
+    interval = null;
+    setTimeout(() => {
+        seconds = 0;
+        secondsNum.textContent = seconds;
+    },300)
+})
